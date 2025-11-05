@@ -1,6 +1,6 @@
 resource "aws_security_group" "this" {
-  name        = "newtest-sg"
-  description = "Test security group"
+  name        = var.name
+  description = var.description
   vpc_id      = var.vpc_id
 
   dynamic "ingress" {

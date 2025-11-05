@@ -1,4 +1,6 @@
-vpc_id = "vpc-00c77f79f94607dbf"
+name        = "newtest-sg-1"
+vpc_id      = "vpc-00c77f79f94607dbf"
+description = "Test security group"
 
 ingress_rules = [
     {

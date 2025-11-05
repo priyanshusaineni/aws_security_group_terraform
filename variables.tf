@@ -1,6 +1,16 @@
+variable "name" {
+  description = "Name of the Security group"
+  type = string
+}
+
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
+}
+
+variable "description" {
+  description = "Description of the security group"
+  type = string
 }
 
 variable "ingress_rules" {
