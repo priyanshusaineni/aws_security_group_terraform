@@ -59,7 +59,7 @@ pipeline {
                 '''
             }
         }
-        
+
         stage('Terraform Apply') {
             when {
                 expression { params.TF_APPLY }
@@ -73,16 +73,15 @@ pipeline {
         }
 
         stage('Terraform Destroy') {
-          when {
-            expression { params.TF_DESTROY }
-          }
-          steps {
-              sh """
-                cd aws_security_group_terraform
-                terraform destroy --auto-approve
-              """
+            when {
+                expression { params.TF_DESTROY }
             }
-          }
+            steps {
+                sh """
+                    cd aws_security_group_terraform
+                    terraform destroy --auto-approve
+                """
+            }
         }
     }
 }
