@@ -1,4 +1,4 @@
-name        = "newtest-sg-1"
+name        = "newtest-sg"
 vpc_id      = "vpc-00c77f79f94607dbf"
 description = "Test security group"
 
@@ -30,6 +30,6 @@ egress_rules = [
 tags = {
     owner       = "ARCH-Platform",
     cost_center = "615110",
-    environment = "DEV",
+    environment = "DEV1",
     scc_jenkins = "T"
 }
