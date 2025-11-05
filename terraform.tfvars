@@ -25,11 +25,9 @@ egress_rules = [
       description = "Allow all outbound traffic"
     }
   ]
-tags = [
-    {
-        owner       = "ARCH-Platform",
-        cost_center = "615110",
-        environment = "DEV",
-        scc_jenkins = "T"
-    }
-]
+tags = {
+    owner       = "ARCH-Platform",
+    cost_center = "615110",
+    environment = "DEV",
+    scc_jenkins = "T"
+}

@@ -81,7 +81,7 @@ pipeline {
                     cd aws_security_group_terraform
                     terraform destroy --auto-approve
                 """
-            }
+            } 
         }
     }
 }

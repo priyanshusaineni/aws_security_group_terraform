@@ -26,6 +26,6 @@ variable "egress_rules" {
 }
 
 variable "tags" {
-  description = "List of Tags for the security group"
-  type = list(object)
+  description = "Map of tags for the security group"
+  type        = map(string)
 }
