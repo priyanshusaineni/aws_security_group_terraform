@@ -30,6 +30,6 @@ egress_rules = [
 tags = {
     owner       = "ARCH-Platform",
     cost_center = "615110",
-    environment = "DEV1",
+    environment = "DEV",
     scc_jenkins = "T"
 }
