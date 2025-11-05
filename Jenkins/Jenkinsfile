@@ -7,7 +7,7 @@ pipeline {
         booleanParam(name: 'TF_INIT', defaultValue: false, description: 'Run terraform init')
 
         booleanParam(name: 'TF_IMPORT', defaultValue: false, description: 'Run terraform import')
-        string(name: 'SECURITY_GROUP_ID', defaultValue: 'sg-0fa56eb26a8b66557', description: 'Security Group ID')
+        string(name: 'SECURITY_GROUP_ID', defaultValue: 'sg-', description: 'Security Group ID')
 
         booleanParam(name: 'TF_PLAN', defaultValue: false, description: 'Run terraform plan')
         
