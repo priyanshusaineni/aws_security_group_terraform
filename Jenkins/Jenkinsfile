@@ -73,7 +73,7 @@ pipeline {
                   '''
                   script{
                     def sg_id = sh(script: 'terraform output -raw security_group_id', returnStdout: true).trim()
-                    sh '$sg_id'
+                    echo "Security Group ID: ${sg_id}"  
                     writeFile file: 'security_group_id.txt', text: sg_id
                     archiveArtifacts 'security_group_id.txt'
                   }       
