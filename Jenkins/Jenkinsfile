@@ -64,20 +64,19 @@ pipeline {
             when {
                 expression { params.TF_APPLY }
             }
-            steps {
-                  sh '''
-                    cd aws_security_group_terraform
+            dir('aws_security_group_terraform') {
+                sh '''
                     terraform apply --auto-approve
                     terraform refresh
                     cat terraform.tfstate
                     terraform output -raw security_group_id
-                  '''
-                  script{
+                '''
+                script {
                     def sg_id = sh(script: 'terraform output -raw security_group_id', returnStdout: true).trim()
-                    echo "Security Group ID: ${sg_id}"  
+                    echo "Security Group ID: ${sg_id}"
                     writeFile file: 'security_group_id.txt', text: sg_id
                     archiveArtifacts 'security_group_id.txt'
-                  }       
+                }
             }
         }
 
