@@ -70,6 +70,7 @@ pipeline {
                     terraform apply --auto-approve
                     terraform refresh
                     cat terraform.tfstate
+                    terraform output -raw security_group_id
                   '''
                   script{
                     def sg_id = sh(script: 'terraform output -raw security_group_id', returnStdout: true).trim()
