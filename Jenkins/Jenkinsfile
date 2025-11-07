@@ -83,5 +83,12 @@ pipeline {
                 """
             } 
         }
+        stage('Output SG ID') {
+            steps {
+                def sg_id = sh(script: 'terraform output -raw security_group_id', returnStdout: true).trim()
+                writeFile file: 'security_group_id.txt', text: security_group_id
+                archiveArtifacts 'security_group_id.txt'
+            }
+        }
     }
 }
